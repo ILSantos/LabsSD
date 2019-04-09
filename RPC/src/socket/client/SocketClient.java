@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class SocketClient {
 
-    public int robertina(int q0, int qf, int t) throws IOException {
+    public float robertina(float q0, float qf, float t) throws IOException {
         
         Socket socket = new Socket("localhost", 4200);
         DataInputStream in = new DataInputStream(socket.getInputStream());
@@ -17,7 +17,7 @@ public class SocketClient {
         out.writeInt(qf);
         out.writeInt(t);
 
-        int robertina = in.read();
+        float robertina = in.read();
 
         in.close();
         out.close();
