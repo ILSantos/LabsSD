@@ -34,7 +34,7 @@ public class TestClient extends JFrame {
                     String s2 = qf.getText();
                     String s3 = t.getText();
 
-                    int robertina = new SocketClient().robertina(Integer.parseInt(s1), Integer.parseInt(s2), Integer.parseInt(s3));
+                    float robertina = new SocketClient().robertina(Float.parseFloat(s1), Float.parseFloat(s2), Float.parseFloat(s3));
 
                     area.append("Taxa de juros mensal: " + robertina);
 
