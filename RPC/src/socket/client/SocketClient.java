@@ -10,8 +10,8 @@ public class SocketClient {
     public int robertina(int q0, int qf, int t) throws IOException {
         
         Socket socket = new Socket("localhost", 4200);
-        DataOutputStream out = new DataOutputStream(socket.getOutputStream());
         DataInputStream in = new DataInputStream(socket.getInputStream());
+        DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
         out.writeInt(q0);
         out.writeInt(qf);
