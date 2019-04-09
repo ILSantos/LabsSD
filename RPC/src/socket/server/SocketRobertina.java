@@ -23,7 +23,7 @@ public class SocketRobertina {
 
         // TO DO: calculo da taxa de juros mensal 
         float div = qf / q0;
-        float raiz = (int) Math.pow(div, t);
+        float raiz = (float) Math.pow(div, t);
         float i = raiz - 1; 
 
         out.writeInt(i);
