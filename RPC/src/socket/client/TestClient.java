@@ -53,7 +53,6 @@ public class TestClient extends JFrame {
         frame.setVisible(true);
 
         frame.addWindowListener(new WindowAdapter() {
-            @Override
             public void windowClosing(WindowEvent e) {
                 System.exit(0);
             }
