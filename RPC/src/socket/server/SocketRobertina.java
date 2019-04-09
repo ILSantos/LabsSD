@@ -5,23 +5,28 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class SocketSoma {
+public class SocketRobertina {
 
     private final Socket socket;
 
-    public SocketSoma(Socket socket) {
+    public SocketRobertina(Socket socket) {
         this.socket = socket;
     }
 
-    public void soma() throws IOException {
+    public void robertina() throws IOException {
         DataInputStream in = new DataInputStream(socket.getInputStream());
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
-        int n1 = in.readInt();
-        int n2 = in.readInt();
+        float q0 = in.readInt();
+        float qf = in.readInt();
+        int t = in.readInt();
 
-        out.write(n1 + n2);
-        System.out.println("Soma realizada!");
+        float div = qf / q0;
+        int raiz = (int) Math.pow(div, t);
+        float i = raiz - 1;
+
+        out.writeFloat(i);
+        System.out.println("Taxa de juros mensal calculada!");
         in.close();
         out.close();
         socket.close();
