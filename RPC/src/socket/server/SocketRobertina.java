@@ -21,8 +21,9 @@ public class SocketRobertina {
         float qf = in.readInt();
         int t = in.readInt();
 
+        // TO DO: calculo da taxa de juros mensal 
         float div = qf / q0;
-        int raiz = (int) Math.pow(div, t);
+        float raiz = (float) Math.pow(div, t);
         float i = raiz - 1;
 
         out.writeFloat(i);
