@@ -13,9 +13,9 @@ public class SocketClient {
         DataInputStream in = new DataInputStream(socket.getInputStream());
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
-        out.writeInt(q0);
-        out.writeInt(qf);
-        out.writeInt(t);
+        out.writeFloat(q0);
+        out.writeFloat(qf);
+        out.writeFloat(t);
 
         float robertina = in.read();
 
