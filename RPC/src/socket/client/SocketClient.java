@@ -6,20 +6,24 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class SocketClient {
-    public int soma(int n1, int n2) throws IOException {
-        Socket socket = new Socket("localhost", 4444);
+
+    public int robertina(int q0, int qf, int t) throws IOException {
+        
+        Socket socket = new Socket("localhost", 4200);
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
         DataInputStream in = new DataInputStream(socket.getInputStream());
 
-        out.writeInt(n1);
-        out.writeInt(n2);
+        out.writeInt(q0);
+        out.writeInt(qf);
+        out.writeInt(t);
 
-        int soma = in.read();
+        int robertina = in.read();
 
         in.close();
         out.close();
         socket.close();
 
-        return soma;
+        return robertina;
     }
+
 }

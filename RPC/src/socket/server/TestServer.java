@@ -15,7 +15,6 @@ public class TestServer {
             Socket socket = serverSocket.accept();
 
             new SocketRobertina(socket).robertina();
-
         }
     }
 }

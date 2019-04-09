@@ -9,28 +9,34 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 public class TestClient extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
     public TestClient() {
         Container panel = getContentPane();
-        final JTextField n1 = new JTextField(5);
-        final JTextField n2 = new JTextField(5);
-        JButton ok = new JButton("SOMAR");
+        final JTextField q0 = new JTextField(5);
+        final JTextField qf = new JTextField(5);
+        final JTextField t = new JTextField(5);
+        JButton ok = new JButton("Calcular taxa!");
         final JTextArea area = new JTextArea(30, 30);
 
         panel.setLayout(new FlowLayout());
-        panel.add(n1);
-        panel.add(n2);
+        panel.add(q0);
+        panel.add(qf);
+        panel.add(t);
         panel.add(ok);
         panel.add(area);
 
         ok.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String s1 = n1.getText();
-                    String s2 = n2.getText();
+                    String s1 = q0.getText();
+                    String s2 = qf.getText();
+                    String s3 = t.getText();
 
-                    int soma = new ClientSocket().soma(Integer.parseInt(s1), Integer.parseInt(s2));
+                    int robertina = new SocketClient().robertina(Integer.parseInt(s1), Integer.parseInt(s2), Integer.parseInt(s3));
 
-                    area.append("Soma (" + s1 + " + " + s2 + "): " + soma);
+                    area.append("Taxa de juros mensal: " + robertina);
 
                 } catch (NumberFormatException e1) {
                     e1.printStackTrace();
@@ -42,7 +48,7 @@ public class TestClient extends JFrame {
     }
 
     public static void main(String[] args) {
-        ClientTest frame  = new ClientTest();
+        TestClient frame  = new TestClient();
         frame.setSize(400,300);
         frame.setVisible(true);
 

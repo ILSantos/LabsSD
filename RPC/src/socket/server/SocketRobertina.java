@@ -17,16 +17,16 @@ public class SocketRobertina {
         DataInputStream in = new DataInputStream(socket.getInputStream());
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
-        float q0 = in.readInt();
-        float qf = in.readInt();
+        int q0 = in.readInt();
+        int qf = in.readInt();
         int t = in.readInt();
 
         // TO DO: calculo da taxa de juros mensal 
-        float div = qf / q0;
-        float raiz = (float) Math.pow(div, t);
-        float i = raiz - 1;
+        int div = qf / q0;
+        int raiz = (int) Math.pow(div, t);
+        int i = raiz - 1; 
 
-        out.writeFloat(i);
+        out.writeInt(i);
         System.out.println("Taxa de juros mensal calculada!");
         in.close();
         out.close();
